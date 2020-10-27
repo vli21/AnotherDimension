@@ -62,22 +62,37 @@ public class ArrayOps {
   //isRowMagic() takes a rectangular 2d array and returns true when each row has the same sum, and false otherwise.
   public static boolean isRowMagic(int[][] matrix) {
     int [] sums= sumRows(matrix);
+    if (sums.length<1){
+      return true;
+    }
     return (sums[0]==sums[1]);
   }
 
   //isColMagic()  takes a rectangular 2d array and  returns true when each column has the same sum, and false otherwise.
   public static boolean isColMagic(int[][] matrix) {
     int [] sums= sumCols (matrix);
+    if (sums.length<1){
+      return true;
+
+    }
+    else{
     return (sums[0]==sums[1]);
+  }
   }
 
 
   //isLocationMagic()  takes a rectangular 2d array and returns true when the row and column specified have the same sum. Assume that the row and col provided are in bounds of the array.
   public static boolean isLocationMagic(int[][] matrix, int row, int col) {
-    int [] colsums= sumCols(matrix);
-    int rowsum= sum(matrix[row]);
-    int coladd= colsums[col];
-    return (rowsum==coladd);
+    if (matrix[row].length<1|| matrix[col].length <1){
+      return true;
+    }
+    else{
+      int [] colsums= sumCols(matrix);
+      int rowsum= sum(matrix[row]);
+      int coladd= colsums[col];
+      return (rowsum==coladd);
+    }
+
     }
 
 
