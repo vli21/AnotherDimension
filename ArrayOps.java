@@ -65,4 +65,10 @@ public class ArrayOps {
     return (sums[0]==sums[1]);
   }
 
+  //isColMagic()  takes a rectangular 2d array and  returns true when each column has the same sum, and false otherwise.
+  public static boolean isColMagic(int[][] matrix) {
+    int [] sums= sumCols (matrix);
+    return (sums[0]==sums[1]);
+  }
+
 }
