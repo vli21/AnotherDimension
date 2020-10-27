@@ -71,4 +71,14 @@ public class ArrayOps {
     return (sums[0]==sums[1]);
   }
 
+
+  //isLocationMagic()  takes a rectangular 2d array and returns true when the row and column specified have the same sum. Assume that the row and col provided are in bounds of the array.
+  public static boolean isLocationMagic(int[][] matrix, int row, int col) {
+    int [] colsums= sumCols(matrix);
+    int rowsum= sum(matrix[row]);
+    int coladd= colsums[col];
+    return (rowsum==coladd);
+    }
+
+
 }
