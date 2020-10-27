@@ -1,4 +1,4 @@
- 
+
 public class ArrayOps {
   //takes an array of int, and returns a sum of the individual values in the array.
   public static int sum(int[] arr) {
@@ -31,5 +31,35 @@ public class ArrayOps {
     }
     return sums;
   }
+
+  //largestInRows() takes a nonempty 2D array of int, the inner arrays cannot be empty either, and returns a 1D array of int with each element being the largest element of the individual rows  of the 2D array.
+  public static  int[] largestInRows(int[][] matrix) {
+    int [] largest= new int [matrix.length];
+    for (int i=0; i<matrix.length;i++){
+      largest [i] = largest(matrix[i]);
+    }
+    return largest;
+  }
+
+
+  //sum() takes a 2D array of int, and returns the sum of all the individual values in all of the arrays.
+  public static  int sum(int[][] arr) {
+    return sum (sumRows(arr));
+  }
+
+
+  //sumCols takes a 2D array that must be rectangular (all rows have the same length) and returns a 1D array of int with each element being the sum of the individual columns of the 2D array.
+  public static int[] sumCols(int[][] matrix) {
+    int [] colsums= new int [matrix[0].length];
+    for (int i=0; i < matrix.length; i++){
+      for (int j=0; j< matrix[i].length;j++){
+        colsums[j]+=matrix[i][j];
+      }
+    }
+    return colsums;
+  }
+
+  
+
 
 }
