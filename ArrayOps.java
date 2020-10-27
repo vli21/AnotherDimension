@@ -59,7 +59,10 @@ public class ArrayOps {
     return colsums;
   }
 
-  
-
+  //isRowMagic() takes a rectangular 2d array and returns true when each row has the same sum, and false otherwise.
+  public static boolean isRowMagic(int[][] matrix) {
+    int [] sums= sumRows(matrix);
+    return (sums[0]==sums[1]);
+  }
 
 }
